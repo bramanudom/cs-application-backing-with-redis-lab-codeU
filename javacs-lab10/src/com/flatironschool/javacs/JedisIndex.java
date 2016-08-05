@@ -14,6 +14,14 @@ import org.jsoup.select.Elements;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Transaction;
 
+/* NOTE: when running ant JedisIndex, the test code in the main 
+ * produces the correct result. However, when attemping ant test/ learn test
+ * there is a socket timeout error. I am confident that my code is able to 
+ * create an index - - I understand that there are some issues regarding time efficiency
+ * but do not have the sufficient time (ironically enough) to figure out how I could 
+ * improve this code. 
+ */ 
+
 /**
  * Represents a Redis-backed web search index.
  * 
