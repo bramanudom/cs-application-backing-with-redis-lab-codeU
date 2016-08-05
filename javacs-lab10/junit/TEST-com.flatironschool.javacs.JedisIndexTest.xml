@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="1" failures="0" hostname="Budnampets-MBP" name="com.flatironschool.javacs.JedisIndexTest" skipped="0" tests="1" time="546.343" timestamp="2016-08-05T03:10:08">
+  <properties>
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="env.XPC_SERVICE_NAME" value="0" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="env._system_arch" value="x86_64" />
+    <property name="env.GEM_HOME" value="/Users/Pet/.rvm/gems/ruby-2.3.0" />
+    <property name="os.name" value="Mac OS X" />
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/classes" />
+    <property name="env.TMPDIR" value="/var/folders/v8/bfmfz2d96333l834kj280rvw0000gn/T/" />
+    <property name="env.PWD" value="/Users/Pet/desktop/cs-application-backing-with-redis-lab-codeU/javacs-lab10" />
+    <property name="env.LANG" value="en_US.UTF-8" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="ant.home" value="/usr/local/Cellar/ant/1.9.7/libexec" />
+    <property name="java.runtime.version" value="1.8.0_77-b03" />
+    <property name="env.MY_RUBY_HOME" value="/Users/Pet/.rvm/rubies/ruby-2.3.0" />
+    <property name="env.Apple_PubSub_Socket_Render" value="/private/tmp/com.apple.launchd.pbHMyckyFK/Render" />
+    <property name="env.DISPLAY" value="/private/tmp/com.apple.launchd.Go0qbuDHYM/org.macosforge.xquartz:0" />
+    <property name="env.rvm_version" value="1.27.0 (latest)" />
+    <property name="user.name" value="Pet" />
+    <property name="env.USER" value="Pet" />
+    <property name="env.SHELL" value="/bin/bash" />
+    <property name="env.__CF_USER_TEXT_ENCODING" value="0x1F5:0x0:0x0" />
+    <property name="env._system_type" value="Darwin" />
+    <property name="env.PATH" value="/Users/Pet/.rvm/gems/ruby-2.3.0/bin:/Users/Pet/.rvm/gems/ruby-2.3.0@global/bin:/Users/Pet/.rvm/rubies/ruby-2.3.0/bin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/Users/Pet/Library/Enthought/Canopy_64bit/User/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/Pet/.rvm/bin" />
+    <property name="user.language" value="en" />
+    <property name="env.rvm_prefix" value="/Users/Pet" />
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib" />
+    <property name="ant.project.default-target" value="build" />
+    <property name="env.XPC_FLAGS" value="0x0" />
+    <property name="ant.project.name" value="JavaCS" />
+    <property name="env.rvm_path" value="/Users/Pet/.rvm" />
+    <property name="env.RUBY_VERSION" value="ruby-2.3.0" />
+    <property name="java.version" value="1.8.0_77" />
+    <property name="user.timezone" value="" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="env._system_name" value="OSX" />
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/endorsed" />
+    <property name="sun.cpu.isalist" value="" />
+    <property name="sun.jnu.encoding" value="UTF-8" />
+    <property name="env.rvm_bin_path" value="/Users/Pet/.rvm/bin" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="env.SHLVL" value="2" />
+    <property name="file.separator" value="/" />
+    <property name="env._system_version" value="10.10" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="52.0" />
+    <property name="user.country" value="US" />
+    <property name="ant.file.JavaCS" value="/Users/Pet/Desktop/cs-application-backing-with-redis-lab-codeU/javacs-lab10/build.xml" />
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="env.LOGNAME" value="Pet" />
+    <property name="ant.file" value="/Users/Pet/Desktop/cs-application-backing-with-redis-lab-codeU/javacs-lab10/build.xml" />
+    <property name="os.version" value="10.10.2" />
+    <property name="env.TERM_PROGRAM_VERSION" value="343.6" />
+    <property name="path.separator" value=":" />
+    <property name="java.vm.version" value="25.77-b03" />
+    <property name="ant.library.dir" value="/usr/local/Cellar/ant/1.9.7/libexec/lib" />
+    <property name="junit.output.dir" value="junit" />
+    <property name="env.IRBRC" value="/Users/Pet/.rvm/rubies/ruby-2.3.0/.irbrc" />
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob" />
+    <property name="env.TERM" value="xterm-256color" />
+    <property name="sun.io.unicode.encoding" value="UnicodeBig" />
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit" />
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="env.GEM_PATH" value="/Users/Pet/.rvm/gems/ruby-2.3.0:/Users/Pet/.rvm/gems/ruby-2.3.0@global" />
+    <property name="user.home" value="/Users/Pet" />
+    <property name="target" value="1.7" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="env.TERM_PROGRAM" value="Apple_Terminal" />
+    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="java.library.path" value="/Users/Pet/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:." />
+    <property name="gopherProxySet" value="false" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.9.7 compiled on April 9 2016" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.flatironschool.javacs.JedisIndexTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/Pet/Desktop/cs-application-backing-with-redis-lab-codeU/javacs-lab10/junit/TEST-com.flatironschool.javacs.JedisIndexTest.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/Users/Pet/Desktop/cs-application-backing-with-redis-lab-codeU/javacs-lab10/junitvmwatcher5575099733990343654.properties propsfile=/Users/Pet/Desktop/cs-application-backing-with-redis-lab-codeU/javacs-lab10/junit5613373384938791609.properties" />
+    <property name="java.class.path" value="/Users/Pet/Desktop/cs-application-backing-with-redis-lab-codeU/javacs-lab10/bin:/Users/Pet/Desktop/cs-application-backing-with-redis-lab-codeU/javacs-lab10/lib/jedis-2.8.0.jar:/Users/Pet/Desktop/cs-application-backing-with-redis-lab-codeU/javacs-lab10/lib/jsoup-1.8.3.jar:/Users/Pet/Desktop/cs-application-backing-with-redis-lab-codeU/javacs-lab10/lib/junit-4.12.jar:/Users/Pet/Desktop/cs-application-backing-with-redis-lab-codeU/javacs-lab10/lib/hamcrest-core-1.3.jar:/Users/Pet/Desktop/cs-application-backing-with-redis-lab-codeU/javacs-lab10/lib/hamcrest-library-1.3.jar:/usr/local/Cellar/ant/1.9.7/libexec/lib/ant-launcher.jar:/usr/local/Cellar/ant/1.9.7/libexec/lib/ant.jar:/usr/local/Cellar/ant/1.9.7/libexec/lib/ant-junit.jar:/usr/local/Cellar/ant/1.9.7/libexec/lib/ant-junit4.jar" />
+    <property name="env.TERM_SESSION_ID" value="8CE9BD93-631D-40A9-804D-B865378D4CAB" />
+    <property name="ant.file.type.JavaCS" value="file" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="ant.file.type" value="file" />
+    <property name="java.vm.specification.version" value="1.8" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="unknown" />
+    <property name="debuglevel" value="source,lines,vars" />
+    <property name="env.HOME" value="/Users/Pet" />
+    <property name="java.io.tmpdir" value="/var/folders/v8/bfmfz2d96333l834kj280rvw0000gn/T/" />
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+    <property name="env.SSH_AUTH_SOCK" value="/private/tmp/com.apple.launchd.hVaC8TOnYI/Listeners" />
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment" />
+    <property name="os.arch" value="x86_64" />
+    <property name="env.JAVA_MAIN_CLASS_33792" value="org.apache.tools.ant.launch.Launcher" />
+    <property name="java.ext.dirs" value="/Users/Pet/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java" />
+    <property name="user.dir" value="/Users/Pet/Desktop/cs-application-backing-with-redis-lab-codeU/javacs-lab10" />
+    <property name="line.separator" value="&#xa;" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="basedir" value="/Users/Pet/Desktop/cs-application-backing-with-redis-lab-codeU/javacs-lab10" />
+    <property name="ant.java.version" value="1.8" />
+    <property name="ant.core.lib" value="/usr/local/Cellar/ant/1.9.7/libexec/lib/ant.jar" />
+    <property name="source" value="1.7" />
+    <property name="file.encoding" value="UTF-8" />
+    <property name="env.VIRTUAL_ENV" value="/Users/Pet/Library/Enthought/Canopy_64bit/User" />
+    <property name="java.specification.version" value="1.8" />
+    <property name="ant.project.invoked-targets" value="test" />
+  </properties>
+  <testcase classname="com.flatironschool.javacs.JedisIndexTest" name="testGetCounts" time="545.919">
+    <error message="java.net.SocketTimeoutException: Read timed out" type="redis.clients.jedis.exceptions.JedisConnectionException">redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:201)
+	at redis.clients.util.RedisInputStream.readLongCrLf(RedisInputStream.java:151)
+	at redis.clients.jedis.Protocol.processInteger(Protocol.java:185)
+	at redis.clients.jedis.Protocol.process(Protocol.java:149)
+	at redis.clients.jedis.Protocol.processMultiBulkReply(Protocol.java:196)
+	at redis.clients.jedis.Protocol.process(Protocol.java:147)
+	at redis.clients.jedis.Protocol.read(Protocol.java:205)
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:297)
+	at redis.clients.jedis.Connection.getRawObjectMultiBulkReply(Connection.java:242)
+	at redis.clients.jedis.Connection.getObjectMultiBulkReply(Connection.java:248)
+	at redis.clients.jedis.Transaction.exec(Transaction.java:46)
+	at com.flatironschool.javacs.JedisIndex.pushTermCounterToRedis(JedisIndex.java:93)
+	at com.flatironschool.javacs.JedisIndex.indexPage(JedisIndex.java:200)
+	at com.flatironschool.javacs.JedisIndexTest.loadIndex(JedisIndexTest.java:54)
+	at com.flatironschool.javacs.JedisIndexTest.setUp(JedisIndexTest.java:40)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.net.SocketInputStream.read(SocketInputStream.java:127)
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:195)
+</error>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

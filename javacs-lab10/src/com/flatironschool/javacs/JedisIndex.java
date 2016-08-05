@@ -49,6 +49,17 @@ public class JedisIndex {
 		return "TermCounter:" + url;
 	}
 
+	// public void getMembers(){
+	// 	Set<String> kk = jedis.smembers("URLSet:the");
+	// 	Transaction t = jedis.multi();
+	// 	for(String k: kk){
+	// 		t.System.out.print(k);
+	// 	}
+	// 	t.exec();
+		
+
+	// }
+
 	/**
 	 * Checks whether we have a TermCounter for a given URL.
 	 * 
@@ -59,6 +70,31 @@ public class JedisIndex {
 		String redisKey = termCounterKey(url);
 		return jedis.exists(redisKey);
 	}
+
+	/**
+     * Pushes the contents of the TermCounter to Redis.
+     */
+    public void pushTermCounterToRedis(TermCounter tc) {
+  
+    	Transaction t = jedis.multi();
+    	for (String word: tc.keySet()){
+    		/* tc.getLabel will return the url name 
+    		/ remember the that termcounter contains a map of all the terms on 
+    		/ the given url page and the amount of times that the term shows up */
+    		String url = tc.getLabel();
+    		String countFromTC = tc.get(word).toString();
+    		t.hset(termCounterKey(url), word, countFromTC);
+    		//result.add(tc.get(key).toString());
+    
+
+    	}
+
+    	t.exec();
+
+    	//return result;
+
+
+    }
 	
 	/**
 	 * Looks up a search term and returns a set of URLs.
@@ -67,8 +103,13 @@ public class JedisIndex {
 	 * @return Set of URLs.
 	 */
 	public Set<String> getURLs(String term) {
-        // FILL THIS IN!
-		return null;
+
+		// // smembers returns all the members in a set
+		String key = urlSetKey(term);
+
+		return jedis.smembers(key);
+        
+
 	}
 
     /**
@@ -78,8 +119,17 @@ public class JedisIndex {
 	 * @return Map from URL to count.
 	 */
 	public Map<String, Integer> getCounts(String term) {
-        // FILL THIS IN!
-		return null;
+		Map<String, Integer> result = new HashMap<String, Integer>();
+		Set<String> urls = getURLs(term);
+
+		for (String url: urls){
+
+			Integer count = getCount(url, term);
+			result.put(url, count);
+		}
+
+		return result;
+        
 	}
 
     /**
@@ -90,10 +140,26 @@ public class JedisIndex {
 	 * @return
 	 */
 	public Integer getCount(String url, String term) {
-        // FILL THIS IN!
-		return null;
+		Integer value = Integer.valueOf(jedis.hget(termCounterKey(url), term));
+
+		return value;
+
+        
 	}
 
+	/**
+     * Adds a URL to the set associated with `term`.
+     */
+    public void add(String term, TermCounter tc) {
+    	Transaction t = jedis.multi();
+
+
+		 t.sadd(urlSetKey(term), tc.getLabel());
+
+		 t.exec();
+
+    }
+ 
 
 	/**
 	 * Add a page to the index.
@@ -102,7 +168,15 @@ public class JedisIndex {
 	 * @param paragraphs  Collection of elements that should be indexed.
 	 */
 	public void indexPage(String url, Elements paragraphs) {
-        // FILL THIS IN!
+	// make a TermCounter and count the terms in the paragraphs
+	 	TermCounter tc = new TermCounter(url);
+	 	tc.processElements(paragraphs);
+		
+	// for each term in the TermCounter, add the TermCounter to the index
+	 	for (String term: tc.keySet()) {
+	 		add(term, tc);
+	 		pushTermCounterToRedis(tc);
+	 	}
 	}
 
 	/**
@@ -118,6 +192,7 @@ public class JedisIndex {
 			// for each term, print the pages where it appears
 			Set<String> urls = getURLs(term);
 			for (String url: urls) {
+				System.out.println(url);
 				Integer count = getCount(url, term);
 				System.out.println("    " + url + " " + count);
 			}
@@ -222,11 +297,14 @@ public class JedisIndex {
 	public static void main(String[] args) throws IOException {
 		Jedis jedis = JedisMaker.make();
 		JedisIndex index = new JedisIndex(jedis);
+		//System.out.println("I'm in the main");
 		
-		//index.deleteTermCounters();
-		//index.deleteURLSets();
-		//index.deleteAllKeys();
+		index.deleteTermCounters();
+		index.deleteURLSets();
+		index.deleteAllKeys();
 		loadIndex(index);
+
+
 		
 		Map<String, Integer> map = index.getCounts("the");
 		for (Entry<String, Integer> entry: map.entrySet()) {
@@ -245,8 +323,9 @@ public class JedisIndex {
 
 		String url = "https://en.wikipedia.org/wiki/Java_(programming_language)";
 		Elements paragraphs = wf.readWikipedia(url);
-		index.indexPage(url, paragraphs);
-		
+	 	index.indexPage(url, paragraphs);
+
+
 		url = "https://en.wikipedia.org/wiki/Programming_language";
 		paragraphs = wf.readWikipedia(url);
 		index.indexPage(url, paragraphs);
